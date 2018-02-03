@@ -16,7 +16,6 @@ class MainActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         relay = Relay.newInstance("GPIO21");
         relay.connectTo(Relay.Position.NORMALLY_CLOSED);
