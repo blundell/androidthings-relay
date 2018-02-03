@@ -10,7 +10,7 @@ public class Relays {
     public static Relays newInstance(String... gpioPins) {
         if (gpioPins.length == 0) {
             throw new IllegalStateException(
-                "Need to pass some gpio pins name parameters to create relays",
+                "Need to pass some gpio pin names parameters to create relays",
                 new ArrayIndexOutOfBoundsException(0)
             );
         }
@@ -30,9 +30,9 @@ public class Relays {
         this.relays = relays;
     }
 
-    public void switchAllTo(Relay.Position position) {
+    public void connectAllTo(Relay.Position position) {
         for (Relay relay : relays) {
-            relay.switchTo(position);
+            relay.connectTo(position);
         }
     }
 

@@ -29,13 +29,13 @@ public class Relay {
         this.gpio = gpio;
     }
 
-    public void switchTo(Position position) {
+    public void connectTo(Position position) {
         try {
             switch (position) {
-                case OPEN:
+                case NORMALLY_OPEN:
                     gpio.setValue(true);
                     break;
-                case CLOSED:
+                case NORMALLY_CLOSED:
                     gpio.setValue(false);
                     break;
                 default:
@@ -55,7 +55,7 @@ public class Relay {
     }
 
     public enum Position {
-        OPEN, CLOSED
+        NORMALLY_OPEN, NORMALLY_CLOSED
     }
 
 }

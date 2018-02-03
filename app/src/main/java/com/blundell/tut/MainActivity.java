@@ -19,10 +19,10 @@ class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         relay = Relay.newInstance("GPIO21");
-        relay.switchTo(Relay.Position.CLOSED);
+        relay.connectTo(Relay.Position.NORMALLY_CLOSED);
 
         relays = Relays.newInstance("GPIO17", "GPIO18");
-        relays.switchAllTo(Relay.Position.OPEN);
+        relays.connectAllTo(Relay.Position.NORMALLY_OPEN);
     }
 
     @Override
