@@ -1,18 +1,18 @@
 package com.blundell.driver;
 
 import com.google.android.things.pio.Gpio;
-import com.google.android.things.pio.PeripheralManagerService;
+import com.google.android.things.pio.PeripheralManager;
 
 import java.io.IOException;
 
 public class Relay {
 
     public static Relay newInstance(String gpioPin) {
-        PeripheralManagerService service = new PeripheralManagerService();
+        PeripheralManager service = PeripheralManager.getInstance();
         return newInstance(service, gpioPin);
     }
 
-    public static Relay newInstance(PeripheralManagerService service, String gpioPin) {
+    public static Relay newInstance(PeripheralManager service, String gpioPin) {
         try {
             Gpio gpio = service.openGpio(gpioPin);
             gpio.setActiveType(Gpio.ACTIVE_HIGH);
